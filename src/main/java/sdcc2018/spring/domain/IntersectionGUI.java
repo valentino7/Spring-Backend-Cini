@@ -39,6 +39,7 @@ public class IntersectionGUI {
         this.sensorGUIS = semaphoreList;
     }
 
+
     public void updateIntersection(@NotNull IntersectionGUI newIntersection) {
         this.sensorGUIS = newIntersection.sensorGUIS;
         this.listPhase = newIntersection.listPhase;
