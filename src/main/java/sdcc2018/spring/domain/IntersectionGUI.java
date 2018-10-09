@@ -7,18 +7,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Component;
-import com.tdunning.math.stats.TDigest;
-import org.springframework.stereotype.Indexed;
 
 import javax.validation.constraints.NotNull;
-import java.util.Comparator;
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Component
-@Document(collection = "Intersection")
+@Document(collection = "sdccIntersection")
 public class IntersectionGUI {
 
 
@@ -28,19 +25,31 @@ public class IntersectionGUI {
     @Field("idIntersection")
     private int idIntersection;
 
-    @Field("semaphoreList")
-    private List<SemaphoreGUI> semaphoreList;
+    @Field("listPhase")
+    private List<PhaseGUI> listPhase;
 
-    public List<SemaphoreGUI> getSemaphoreList() {
-        return semaphoreList;
+    @Field("sensorList")
+    private List<SensorGUI> sensorGUIS;
+
+    public List<SensorGUI> getSensorGUIS() {
+        return sensorGUIS;
     }
 
-    public void setSemaphoreList(List<SemaphoreGUI> semaphoreList) {
-        this.semaphoreList = semaphoreList;
+    public void setSensorGUIS(List<SensorGUI> semaphoreList) {
+        this.sensorGUIS = semaphoreList;
     }
 
     public void updateIntersection(@NotNull IntersectionGUI newIntersection) {
-        this.semaphoreList = newIntersection.semaphoreList;
+        this.sensorGUIS = newIntersection.sensorGUIS;
+        this.listPhase = newIntersection.listPhase;
+    }
+
+    public List<PhaseGUI> getListPhase() {
+        return listPhase;
+    }
+
+    public void setListPhase(List<PhaseGUI> listPhase) {
+        this.listPhase = listPhase;
     }
 
 }
