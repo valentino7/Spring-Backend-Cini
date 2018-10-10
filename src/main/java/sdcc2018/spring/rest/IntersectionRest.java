@@ -25,9 +25,10 @@ public class IntersectionRest {
         return new ResponseEntity<>(intersectionService.createIntersection(intersection), HttpStatus.OK);
     }
 
-    @RequestMapping(path = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<IntersectionGUI> updateIntersection(@PathVariable String id,@RequestBody IntersectionGUI intersection) {
-        return new ResponseEntity<>(intersectionService.updateIntersection(id,intersection), HttpStatus.OK);
+    @RequestMapping(path = "/update", method = RequestMethod.PUT)
+    public ResponseEntity<IntersectionGUI> updateIntersection(@RequestBody IntersectionGUI intersection) {
+        System.err.println(intersection.getId());
+        return new ResponseEntity<>(intersectionService.updateIntersection(intersection), HttpStatus.OK);
     }
 
     @RequestMapping(path = "/findAll", method = RequestMethod.GET)

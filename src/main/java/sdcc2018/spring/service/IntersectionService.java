@@ -23,14 +23,11 @@ public class IntersectionService {
 
     @Transactional
     public IntersectionGUI createIntersection(IntersectionGUI intersection) {
-       /* if(semaphoreRepo.saveAll(intersection.getSemaphoreList())==null)
-            return null;*/
-        StateTrafficLight trafficLight = new StateTrafficLight();
+        /*StateTrafficLight trafficLight = new StateTrafficLight();
         for(int i=0;i!=4;i++){
             trafficLight.updateFields(i,intersection.getId(),new String[]{"OK","OK","OK"});
             trafficLightRepo.save(trafficLight);
-        }
-
+        }*/
         return intersectionRepo.save(intersection);
     }
 
@@ -40,8 +37,9 @@ public class IntersectionService {
         if ( intersectionToDelete == null)
             return false;
 
-        if(trafficLightRepo.findByIdIntersection(intersectionToDelete.getId())==null)
+        /*if(trafficLightRepo.findByIdIntersection(intersectionToDelete.getId())==null)
             return false;
+        */
         intersectionRepo.delete(intersectionToDelete);
         return true;
     }
@@ -58,13 +56,12 @@ public class IntersectionService {
     }
 
     @Transactional
-    public IntersectionGUI updateIntersection(String id, IntersectionGUI intersection) {
-        IntersectionGUI intersectionToUpdate = intersectionRepo.findByid(id);
+    public IntersectionGUI updateIntersection( IntersectionGUI intersection) {
+        //System.err.println(intersection.getSensorList());
+        IntersectionGUI intersectionToUpdate = intersectionRepo.findByid(intersection.getId());
         if (intersectionToUpdate == null )
             return null;
-
         intersectionToUpdate.updateIntersection(intersection);
-
         return intersectionRepo.save(intersectionToUpdate);
     }
 }

@@ -36,6 +36,10 @@ public class IntersectionGUI {
         this.listPhase = newIntersection.listPhase;
     }
 
+    public void setId(String id) {
+        this.id= id;
+    }
+
     public String getId() {
         return id;
     }
