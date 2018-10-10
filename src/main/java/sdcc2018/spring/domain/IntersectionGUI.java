@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Component
-@Document(collection = "sdccIntersection2")
+@Document(collection = "sdccIntersection")
 public class IntersectionGUI {
 
 
@@ -36,4 +36,15 @@ public class IntersectionGUI {
         this.listPhase = newIntersection.listPhase;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public List<SensorGUI> getSensorList() {
+        return sensorList;
+    }
+
+    public void setSensorList(List<SensorGUI> sensorList) {
+        this.sensorList = sensorList;
+    }
 }
