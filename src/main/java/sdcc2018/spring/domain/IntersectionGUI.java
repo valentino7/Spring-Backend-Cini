@@ -7,11 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Component;
-import com.tdunning.math.stats.TDigest;
-import org.springframework.stereotype.Indexed;
 
 import javax.validation.constraints.NotNull;
-import java.util.Comparator;
 import java.util.List;
 
 @Getter
