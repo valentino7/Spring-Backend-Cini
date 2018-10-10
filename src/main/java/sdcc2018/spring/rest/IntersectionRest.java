@@ -38,7 +38,7 @@ public class IntersectionRest {
     @RequestMapping(path = "findByID/{id}", method = RequestMethod.GET)
     public ResponseEntity<IntersectionGUI> findByIdIntersection(@PathVariable String id) {
         IntersectionGUI response = intersectionService.findByIdIntersection(id);
-        return new ResponseEntity<>(response,response!= null ? HttpStatus.OK:  HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(response!= null ? HttpStatus.OK:  HttpStatus.NOT_FOUND);
     }
 
     @RequestMapping(path = "deleteById/{id}", method = RequestMethod.DELETE)

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sdcc2018.spring.domain.SemaphoreGUI;
+import sdcc2018.spring.domain.SensorGUI;
 import sdcc2018.spring.service.SemaphoreService;
 
 @RestController
@@ -17,12 +17,12 @@ public class SemaphoreRest {
 
 
     @RequestMapping(path = "", method = RequestMethod.POST)
-    public ResponseEntity<SemaphoreGUI> saveSemaphore(@RequestBody SemaphoreGUI semaphore) {
+    public ResponseEntity<SensorGUI> saveSemaphore(@RequestBody SensorGUI semaphore) {
         return new ResponseEntity<>(semaphoreService.createSemaphore(semaphore), HttpStatus.CREATED);
     }
 
     @RequestMapping(path = "", method = RequestMethod.GET)
-    public ResponseEntity<SemaphoreGUI> find(@RequestBody SemaphoreGUI semaphore) {
+    public ResponseEntity<SensorGUI> find(@RequestBody SensorGUI semaphore) {
         return new ResponseEntity<>(semaphoreService.createSemaphore(semaphore), HttpStatus.CREATED);
     }
 

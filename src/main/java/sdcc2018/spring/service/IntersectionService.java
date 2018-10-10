@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sdcc2018.spring.domain.IntersectionGUI;
 import sdcc2018.spring.repo.IntersectionRepo;
-import sdcc2018.spring.repo.SemaphoreRepo;
 
 
 import java.util.ArrayList;
@@ -16,10 +15,6 @@ public class IntersectionService {
 
     @Autowired
     private IntersectionRepo intersectionRepo;
-
-    @Autowired
-    private SemaphoreRepo semaphoreRepo;
-
 
     @Transactional
     public IntersectionGUI createIntersection(IntersectionGUI intersection) {

@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Component
-@Document(collection = "Intersection")
+@Document(collection = "sdccIntersection2")
 public class IntersectionGUI {
 
 
@@ -25,19 +25,15 @@ public class IntersectionGUI {
     @Field("idIntersection")
     private int idIntersection;
 
-    @Field("semaphoreList")
-    private List<SemaphoreGUI> semaphoreList;
+    @Field("listPhase")
+    private List<PhaseGUI> listPhase;
 
-    public List<SemaphoreGUI> getSemaphoreList() {
-        return semaphoreList;
-    }
-
-    public void setSemaphoreList(List<SemaphoreGUI> semaphoreList) {
-        this.semaphoreList = semaphoreList;
-    }
+    @Field("sensorList")
+    private List<SensorGUI> sensorList;
 
     public void updateIntersection(@NotNull IntersectionGUI newIntersection) {
-        this.semaphoreList = newIntersection.semaphoreList;
+        this.sensorList = newIntersection.sensorList;
+        this.listPhase = newIntersection.listPhase;
     }
 
 }
