@@ -28,24 +28,24 @@ public class StateTrafficLight {
     private String idIntersection;
 
     @Field("stateTrafficLight")
-    private String[] state;
+    private String[] stateTrafficLight;
 
     public void updateState(@NotNull String[] newState) {
-        this.state = newState;
+        this.stateTrafficLight = newState;
     }
 
-    public void updateFields(int idTrafficLight,String idIntersection,String[] state){
-        this.state= state;
+    public void updateFields(int idTrafficLight,String idIntersection,String[] stateTrafficLight){
+        this.stateTrafficLight= stateTrafficLight;
         this.idIntersection=idIntersection;
         this.idTrafficLight=idTrafficLight;
     }
 
-    public String[] getState() {
-        return state;
+    public String[] getStateTrafficLight() {
+        return stateTrafficLight;
     }
 
-    public void setState(String[] state) {
-        this.state = state;
+    public void setStateTrafficLight(String[] stateTrafficLight) {
+        this.stateTrafficLight = stateTrafficLight;
     }
 
     public String getId() {

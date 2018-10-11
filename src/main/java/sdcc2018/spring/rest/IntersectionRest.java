@@ -27,7 +27,6 @@ public class IntersectionRest {
 
     @RequestMapping(path = "/update", method = RequestMethod.PUT)
     public ResponseEntity<IntersectionGUI> updateIntersection(@RequestBody IntersectionGUI intersection) {
-        System.err.println(intersection.getId());
         return new ResponseEntity<>(intersectionService.updateIntersection(intersection), HttpStatus.OK);
     }
 

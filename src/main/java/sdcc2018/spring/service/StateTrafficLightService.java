@@ -19,7 +19,7 @@ public class StateTrafficLightService {
         ArrayList<StateTrafficLight> stateTrafficLights = trafficLightRepo.findAll();
         for (StateTrafficLight stateTrafficLight: stateTrafficLights) {
             for(int j=0;j!=3;j++)
-                if(stateTrafficLight.getState()[j].equals("OK")) {
+                if(!stateTrafficLight.getStateTrafficLight()[j].equals("OK")) {
                     stateTrafficLightsBroken.add(stateTrafficLight);
                     break;
                 }

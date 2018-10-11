@@ -23,11 +23,11 @@ public class IntersectionService {
 
     @Transactional
     public IntersectionGUI createIntersection(IntersectionGUI intersection) {
-        /*StateTrafficLight trafficLight = new StateTrafficLight();
+        StateTrafficLight trafficLight = new StateTrafficLight();
         for(int i=0;i!=4;i++){
             trafficLight.updateFields(i,intersection.getId(),new String[]{"OK","OK","OK"});
             trafficLightRepo.save(trafficLight);
-        }*/
+        }
         return intersectionRepo.save(intersection);
     }
 
@@ -37,9 +37,9 @@ public class IntersectionService {
         if ( intersectionToDelete == null)
             return false;
 
-        /*if(trafficLightRepo.findByIdIntersection(intersectionToDelete.getId())==null)
+        if(trafficLightRepo.findByIdIntersection(intersectionToDelete.getId())==null)
             return false;
-        */
+
         intersectionRepo.delete(intersectionToDelete);
         return true;
     }
