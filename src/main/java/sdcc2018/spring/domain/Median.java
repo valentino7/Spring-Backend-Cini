@@ -30,4 +30,11 @@ public class Median {
     @Field("medianList")
     private List<MedianElement> listMedian;
 
+    public String getIdWindow() {
+        return idWindow;
+    }
+
+    public void setIdWindow(String idWindow) {
+        this.idWindow = idWindow;
+    }
 }

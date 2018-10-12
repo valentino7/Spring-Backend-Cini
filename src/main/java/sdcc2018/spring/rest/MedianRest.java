@@ -19,9 +19,9 @@ public class MedianRest {
     private MedianService medianService;
 
 
-    @RequestMapping(path = "/findAll", method = RequestMethod.GET)
-    public ResponseEntity<ArrayList<Median>> findAll() {
-        return new ResponseEntity<>(medianService.findAll(), HttpStatus.OK);
+    @RequestMapping(path = "/findAll/{choose}", method = RequestMethod.GET)
+    public ResponseEntity<Median> findAll(@PathVariable int choose) {
+        return new ResponseEntity<>(medianService.findAll(choose), HttpStatus.OK);
     }
 
     @RequestMapping(path = "/findByIdIntersection/{id}", method = RequestMethod.GET)

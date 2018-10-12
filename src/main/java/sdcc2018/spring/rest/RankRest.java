@@ -21,9 +21,9 @@ public class RankRest {
     private RankService rankService;
 
 
-    @RequestMapping(path = "/findAll", method = RequestMethod.GET)
-    public ResponseEntity<ArrayList<Rank>>findAll() {
-        return new ResponseEntity<>(rankService.findAll(), HttpStatus.OK);
+    @RequestMapping(path = "/findAll/{choose}", method = RequestMethod.GET)
+    public ResponseEntity<Rank>findAll(@PathVariable int choose) {
+        return new ResponseEntity<>(rankService.findAll(choose), HttpStatus.OK);
     }
 
     @RequestMapping(path = "/findByIdIntersection/{id}", method = RequestMethod.GET)

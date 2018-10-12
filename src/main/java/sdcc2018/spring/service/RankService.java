@@ -15,9 +15,29 @@ public class RankService {
     private RankRepo rankRepo;
 
     @Transactional
-    public ArrayList<Rank> findAll(){
-        return rankRepo.findAll();
+    public Rank findAll(int choose){
+
+        ArrayList<Rank> ranks = rankRepo.findAll();
+
+        for(int i=0;i!=3;i++){
+            if(choose==0) {
+                if (ranks.get(i).getIdWindow().equals("15M")){
+                    return ranks.get(i);
+                }
+            }
+            else if(choose==1) {
+                if (ranks.get(i).getIdWindow().equals("1H")){
+                    return ranks.get(i);
+                }
+            }
+            else {
+                if (ranks.get(i).getIdWindow().equals("24H"))
+                    return ranks.get(i);
+            }
+        }
+        return null;
     }
+
     @Transactional
     public Rank findRankByIdWindow(String id){
         return rankRepo.findRankByIdWindow(id);

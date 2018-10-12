@@ -16,9 +16,28 @@ public class MedianService {
     private MedianRepo medianRepo;
 
     @Transactional
-    public ArrayList<Median> findAll(){
-        return medianRepo.findAll();
+    public Median findAll(int choose){
+
+        ArrayList<Median> medians = medianRepo.findAll();
+
+       for(int i=0;i!=3;i++){
+           if(choose==0) {
+               if (medians.get(i).getIdWindow().equals("15M"))
+                   return medians.get(i);
+           }
+           else if(choose==1) {
+               if (medians.get(i).getIdWindow().equals("1H"))
+                   return medians.get(i);
+           }
+           else {
+               if (medians.get(i).getIdWindow().equals("24H"))
+                   return medians.get(i);
+           }
+       }
+        return null;
+
     }
+
     @Transactional
     public Median findRankByIdWindow(String id){
         return medianRepo.findMedianByIdWindow(id);

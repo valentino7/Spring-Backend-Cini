@@ -27,4 +27,11 @@ public class Rank {
     @Field("rankElement")
     private List<RankElement> element;
 
+    public String getIdWindow() {
+        return idWindow;
+    }
+
+    public void setIdWindow(String idWindow) {
+        this.idWindow = idWindow;
+    }
 }
