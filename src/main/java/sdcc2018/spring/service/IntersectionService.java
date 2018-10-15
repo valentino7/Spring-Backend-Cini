@@ -32,16 +32,11 @@ public class IntersectionService {
     }
 
     @Transactional
-    public boolean deleteIntersection(String id) {
-        IntersectionGUI intersectionToDelete = intersectionRepo.findByid(id);
-        if ( intersectionToDelete == null)
-            return false;
-
-        if(trafficLightRepo.findByIdIntersection(intersectionToDelete.getId())==null)
-            return false;
-
-        intersectionRepo.delete(intersectionToDelete);
+    public boolean deleteIntersection(int id) {
+        intersectionRepo.deleteByIdIntersection(id);
+        trafficLightRepo.deleteByIdIntersection(id);
         return true;
+
     }
 
     @Transactional

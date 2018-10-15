@@ -13,4 +13,5 @@ public interface StateTrafficLightRepo extends MongoRepository<StateTrafficLight
     StateTrafficLight findByid(String id);
     StateTrafficLight findByIdIntersection(String id);
     ArrayList<StateTrafficLight> findAll();
+    void deleteByIdIntersection(int id);
 }

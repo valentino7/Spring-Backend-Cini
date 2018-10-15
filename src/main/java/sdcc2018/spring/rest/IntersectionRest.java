@@ -41,7 +41,7 @@ public class IntersectionRest {
     }
 
     @RequestMapping(path = "deleteById/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Boolean> deleteIntersection(@PathVariable String id) {
+    public ResponseEntity<Boolean> deleteIntersection(@PathVariable int id) {
         boolean response = intersectionService.deleteIntersection(id);
         return new ResponseEntity<>(response, response ? HttpStatus.OK: HttpStatus.NOT_FOUND);
     }
