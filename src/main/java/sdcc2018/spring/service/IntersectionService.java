@@ -33,9 +33,8 @@ public class IntersectionService {
 
     @Transactional
     public boolean deleteIntersection(int id) {
-        intersectionRepo.deleteByIdIntersection(id);
-        trafficLightRepo.deleteByIdIntersection(id);
-        return true;
+
+        return ( (trafficLightRepo.deleteByIdIntersection(id)==4) && ( intersectionRepo.deleteByIdIntersection(id) ==1));
 
     }
 

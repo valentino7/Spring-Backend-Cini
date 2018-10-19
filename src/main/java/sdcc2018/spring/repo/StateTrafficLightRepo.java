@@ -6,12 +6,14 @@ import org.springframework.stereotype.Repository;
 import sdcc2018.spring.domain.StateTrafficLight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public interface StateTrafficLightRepo extends MongoRepository<StateTrafficLight, String> {
 
     StateTrafficLight findByid(String id);
+
     StateTrafficLight findByIdIntersection(String id);
     ArrayList<StateTrafficLight> findAll();
-    void deleteByIdIntersection(int id);
+    Long deleteByIdIntersection(int id);
 }

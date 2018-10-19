@@ -11,6 +11,6 @@ public interface IntersectionRepo extends MongoRepository<IntersectionGUI, Strin
 
     IntersectionGUI findByid(String id);
     ArrayList<IntersectionGUI> findAll();
-    void deleteByIdIntersection(int id);
+    Long deleteByIdIntersection(int id);
 
 }
