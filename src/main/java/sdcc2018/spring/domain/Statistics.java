@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -21,14 +21,19 @@ public class Statistics {
     @Id
     private String id;
 
-    public List<StatisticsElement> getList() {
-        return list;
-    }
-
-    public void setList(List<StatisticsElement> list) {
-        this.list = list;
-    }
+    @Field("query")
+    private int query;
 
     @Field("statisticsElement")
-    private List<StatisticsElement> list;
+    private ArrayList<StatisticsElement> statisticsElementList;
+
+
+    public ArrayList<StatisticsElement> getStatisticsElementList() {
+        return statisticsElementList;
+    }
+
+    public void setStatisticsElementList(ArrayList<StatisticsElement> statisticsElementList) {
+        this.statisticsElementList = statisticsElementList;
+    }
+
 }

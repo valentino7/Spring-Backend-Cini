@@ -6,5 +6,5 @@ import sdcc2018.spring.domain.StatisticsElement;
 
 public interface StatisticsRepo extends MongoRepository<Statistics,String> {
 
-
+    Statistics findByQuery(int q);
 }
