@@ -23,6 +23,8 @@ public class IntersectionService {
 
     @Transactional
     public IntersectionGUI createIntersection(IntersectionGUI intersection) {
+        int idIntersection = this.findMaxId();
+        intersection.setIdIntersection(idIntersection+1);
         for(int i=0;i!=4;i++){
             StateTrafficLight trafficLight = new StateTrafficLight();
             trafficLight.updateFields(i,intersection.getIdIntersection(),new String[]{"OK","OK","OK"});
@@ -59,7 +61,7 @@ public class IntersectionService {
         return intersectionRepo.save(intersectionToUpdate);
     }
 
-    public Integer findMaxId() {
+    public int findMaxId() {
         ArrayList<IntersectionGUI> allIntersection = intersectionRepo.findAll();
         int max = 0;
         int temp;
