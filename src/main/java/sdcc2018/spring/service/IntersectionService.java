@@ -23,9 +23,9 @@ public class IntersectionService {
 
     @Transactional
     public IntersectionGUI createIntersection(IntersectionGUI intersection) {
-        StateTrafficLight trafficLight = new StateTrafficLight();
         for(int i=0;i!=4;i++){
-            trafficLight.updateFields(i,intersection.getId(),new String[]{"OK","OK","OK"});
+            StateTrafficLight trafficLight = new StateTrafficLight();
+            trafficLight.updateFields(i,intersection.getIdIntersection(),new String[]{"OK","OK","OK"});
             trafficLightRepo.save(trafficLight);
         }
         return intersectionRepo.save(intersection);

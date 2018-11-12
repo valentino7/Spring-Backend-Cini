@@ -42,13 +42,13 @@ public class IntersectionRest {
     }
 
 
-    @RequestMapping(path = "findByID/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/findByID/{id}", method = RequestMethod.GET)
     public ResponseEntity<IntersectionGUI> findByIdIntersection(@PathVariable String id) {
         IntersectionGUI response = intersectionService.findByIdIntersection(id);
         return new ResponseEntity<>(response!= null ? HttpStatus.OK:  HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(path = "deleteById/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/deleteById/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Boolean> deleteIntersection(@PathVariable int id) {
         Boolean response = intersectionService.deleteIntersection(id);
         return new ResponseEntity<>(response, response ? HttpStatus.OK: HttpStatus.NOT_FOUND);

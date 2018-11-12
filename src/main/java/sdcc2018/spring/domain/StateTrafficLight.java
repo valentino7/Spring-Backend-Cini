@@ -24,8 +24,16 @@ public class StateTrafficLight {
     @Field("idTrafficLight")
     private int idTrafficLight;
 
+    public int getIdIntersection() {
+        return idIntersection;
+    }
+
+    public void setIdIntersection(int idIntersection) {
+        this.idIntersection = idIntersection;
+    }
+
     @Field("idIntersection")
-    private String idIntersection;
+    private int idIntersection;
 
     @Field("stateTrafficLight")
     private String[] stateTrafficLight;
@@ -34,7 +42,7 @@ public class StateTrafficLight {
         this.stateTrafficLight = newState;
     }
 
-    public void updateFields(int idTrafficLight,String idIntersection,String[] stateTrafficLight){
+    public void updateFields(int idTrafficLight,int idIntersection,String[] stateTrafficLight){
         this.stateTrafficLight= stateTrafficLight;
         this.idIntersection=idIntersection;
         this.idTrafficLight=idTrafficLight;
