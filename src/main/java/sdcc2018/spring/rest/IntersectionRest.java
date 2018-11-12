@@ -1,5 +1,6 @@
 package sdcc2018.spring.rest;
 
+import javafx.beans.binding.IntegerBinding;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,13 @@ public class IntersectionRest {
     public ResponseEntity<ArrayList<IntersectionGUI>> findAll() {
         return new ResponseEntity<>(intersectionService.findAll(), HttpStatus.OK);
     }
+
+
+    @RequestMapping(path = "/findMaxId", method = RequestMethod.GET)
+    public ResponseEntity<Integer> findMaxId() {
+        return new ResponseEntity<>(intersectionService.findMaxId(), HttpStatus.OK);
+    }
+
 
     @RequestMapping(path = "findByID/{id}", method = RequestMethod.GET)
     public ResponseEntity<IntersectionGUI> findByIdIntersection(@PathVariable String id) {

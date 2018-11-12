@@ -58,4 +58,17 @@ public class IntersectionService {
         intersectionToUpdate.updateIntersection(intersection);
         return intersectionRepo.save(intersectionToUpdate);
     }
+
+    public Integer findMaxId() {
+        ArrayList<IntersectionGUI> allIntersection = intersectionRepo.findAll();
+        int max = 0;
+        int temp;
+        for (int i = 0 ; i< allIntersection.size(); i++){
+            temp = allIntersection.get(i).getIdIntersection();
+            if (temp > max) {
+                max = temp;
+            }
+        }
+        return max;
+    }
 }

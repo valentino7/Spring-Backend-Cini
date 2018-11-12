@@ -22,6 +22,14 @@ public class IntersectionGUI {
     @Id
     private String id;
 
+    public int getIdIntersection() {
+        return idIntersection;
+    }
+
+    public void setIdIntersection(int idIntersection) {
+        this.idIntersection = idIntersection;
+    }
+
     @Field("idIntersection")
     private int idIntersection;
 
