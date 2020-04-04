@@ -3,7 +3,7 @@
 A simple backend for the Cini Storm Project. This BackEnd takes the data from the database(MongoDB) and gives it to the frontend 
 when requested.
 
-### Framework
+### Frameworks
 
 - Spring
 
